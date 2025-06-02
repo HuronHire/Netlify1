@@ -1,0 +1,215 @@
+HURON HIRE WEBSITE - MINIMAL GITHUB SETUP
+========================================
+
+Go to: https://github.com/HuronHire/Netlify1
+
+CREATE FILE 1: package.json
+---------------------------
+{
+  "name": "huron-hire-website",
+  "scripts": { "build": "echo 'Static site - no build needed'" },
+  "dependencies": {}
+}
+
+CREATE FILE 2: index.html
+-------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huron Hire - Equipment Hire Perth</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: #00BFFF; color: white; padding: 20px 0; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.2rem; }
+        .section { padding: 60px 0; }
+        .equipment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0; }
+        .equipment-card { background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; }
+        .equipment-card h3 { color: #00BFFF; margin-bottom: 15px; font-size: 1.3rem; }
+        .contact-section { background: #f8f9fa; }
+        .contact-form { background: white; padding: 40px; border-radius: 10px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        .form-group input, .form-group textarea, .form-group select { 
+            width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 6px; 
+            font-size: 16px; transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: #00BFFF;
+        }
+        .btn { background: #00BFFF; color: white; padding: 15px 30px; border: none; 
+               border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold;
+               transition: background 0.3s; }
+        .btn:hover { background: #0099CC; }
+        .footer { background: #333; color: white; text-align: center; padding: 40px 0; }
+        .footer p { margin-bottom: 10px; }
+        .coverage { background: white; text-align: center; }
+        .coverage h2 { color: #00BFFF; margin-bottom: 20px; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .equipment-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>HURON HIRE</h1>
+            <p>Professional Equipment Hire - Perth, Western Australia</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #00BFFF; font-size: 2.2rem;">Our Equipment</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">Professional equipment hire for construction, maintenance, and industrial projects</p>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <h3>Electric Scissor Lifts</h3>
+                    <p>Clean, quiet operation perfect for indoor projects. Ideal for warehouses, retail spaces, and office buildings.</p>
+                </div>
+                <div class="equipment-card">
+                    <h3>Rough Terrain Scissor Lifts</h3>
+                    <p>Built for outdoor construction sites with uneven ground. Powerful and reliable for all weather conditions.</p>
+                </div>
+                <div class="equipment-card">
+                    <h3>Boom Lifts</h3>
+                    <p>Reach high and hard-to-access areas with precision. Perfect for complex projects requiring flexibility.</p>
+                </div>
+                <div class="equipment-card">
+                    <h3>Plant Trailers</h3>
+                    <p>Safe and secure transportation for your valuable equipment. Various sizes available for different needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section coverage">
+        <div class="container">
+            <h2>Coverage Area</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Proudly serving Perth and surrounding areas</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d115.61315816640625!3d-31.953512899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32966cdb47733d%3A0x304f0b55eb4b3a0!2sPerth%20WA%2C%20Australia!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s" 
+                width="100%" 
+                height="400" 
+                style="border:0; border-radius: 8px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="section contact-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #00BFFF; font-size: 2.2rem;">Get Your Quote</h2>
+            
+            <div class="contact-form">
+                <form action="https://render1-wo70.onrender.com/api/inquiries" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="equipment">Equipment Needed *</label>
+                        <select id="equipment" name="equipment" required>
+                            <option value="">Select Equipment Type</option>
+                            <option value="Electric Scissor Lift">Electric Scissor Lift</option>
+                            <option value="Rough Terrain Scissor Lift">Rough Terrain Scissor Lift</option>
+                            <option value="Boom Lift">Boom Lift</option>
+                            <option value="Plant Trailer">Plant Trailer</option>
+                            <option value="Multiple Equipment Types">Multiple Equipment Types</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="startDate">Project Start Date *</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="finishDate">Project Finish Date *</label>
+                        <input type="date" id="finishDate" name="finishDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectDetails">Project Details</label>
+                        <textarea id="projectDetails" name="projectDetails" rows="4" placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Request Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p><strong>HURON HIRE</strong> - Professional Equipment Hire</p>
+            <p>Perth, Western Australia</p>
+            <p>Email: hire@huronhire.com.au</p>
+            <p>&copy; 2024 Huron Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            fetch('https://render1-wo70.onrender.com/api/inquiries', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you! Your quote request has been sent. We will contact you shortly.');
+                    this.reset();
+                } else {
+                    alert('There was an issue sending your request. Please try again or contact us directly.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an issue sending your request. Please try again or contact us directly.');
+            });
+        });
+    </script>
+</body>
+</html>
+
+THEN CONNECT TO NETLIFY:
+- Build command: npm run build  
+- Publish directory: . (root directory)
