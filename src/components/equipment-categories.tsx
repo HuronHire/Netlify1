@@ -5,28 +5,32 @@ export default function EquipmentCategories() {
       title: 'Electric Scissor Lifts',
       description: 'Perfect for indoor applications with zero emissions and quiet operation',
       features: ['4m to 12m working height', 'Zero emissions', 'Compact design', 'Easy maneuverability'],
-      image: '/api/placeholder/400/300'
+      image: '/images/JLG ES1932.png',
+      alt: 'JLG ES1932 Electric Scissor Lift'
     },
     {
       id: 'rough-terrain-scissor-lifts', 
       title: 'Rough Terrain Scissor Lifts',
       description: 'Built for outdoor construction sites with all-terrain capabilities',
       features: ['6m to 15m working height', 'All-terrain tires', 'Weather resistant', 'Heavy-duty construction'],
-      image: '/api/placeholder/400/300'
+      image: '/images/genie-gs3369rt.jpeg',
+      alt: 'Genie GS3369RT Rough Terrain Scissor Lift'
     },
     {
       id: 'boom-lifts',
       title: 'Boom Lifts',
       description: 'Articulating and telescopic boom lifts for maximum reach and flexibility',
       features: ['12m to 25m working height', 'Articulating arms', 'Extended reach', 'Precise positioning'],
-      image: '/api/placeholder/400/300'
+      image: '/images/450aj-gallery-silo.webp',
+      alt: 'Boom Lift Equipment'
     },
     {
       id: 'plant-trailers',
       title: 'Plant Trailers',
       description: 'Professional equipment transport solutions for your machinery',
       features: ['Various load capacities', 'Ramp access', 'Tie-down points', 'Road registered'],
-      image: '/api/placeholder/400/300'
+      image: '/images/eco-plant-510-1122-list.webp',
+      alt: 'Plant Trailer for Equipment Transport'
     }
   ];
 
@@ -52,8 +56,12 @@ export default function EquipmentCategories() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((category) => (
             <div key={category.id} className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500 text-sm">Equipment Image</span>
+              <div className="h-48 overflow-hidden bg-white flex items-center justify-center">
+                <img 
+                  src={category.image} 
+                  alt={category.alt}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
